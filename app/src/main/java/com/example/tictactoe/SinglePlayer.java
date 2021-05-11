@@ -56,7 +56,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                String buttonID = "button1_" + i + j;
+                String buttonID = "button1_ + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);

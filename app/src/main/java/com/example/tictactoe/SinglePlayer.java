@@ -27,7 +27,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
     private final String Computer = "O";
 
-    public static boolean playerTurn = true;
+    public boolean playerTurn = true;
 
     private int roundCount;
 
@@ -110,12 +110,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
             WhoHasWon();
         }
-        
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
 
 

@@ -341,19 +341,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
 
-    private String RandomMove(String[][] field){
-        String RowAndColumn = "";
-        int Row = Rand.nextInt(3);
-        int Column = Rand.nextInt(3);
-        if (!(field[Row][Column].equals(""))) {
-            RowAndColumn = RandomMove(field);
-        }
-        else{
-            RowAndColumn = String.valueOf(Row) + "," + String.valueOf(Column);
-        }
-        return RowAndColumn;
-    }
-
     private void WhoHasWon(){
         if (checkForWin()) {
             if (playerTurn) {

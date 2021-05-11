@@ -91,11 +91,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
             roundCount++;
             WhoHasWon();
         }
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
         if (!playerTurn) {
             for (int i = 0; i < 3; i++){
@@ -114,6 +110,13 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
             WhoHasWon();
         }
+        
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
 
     }

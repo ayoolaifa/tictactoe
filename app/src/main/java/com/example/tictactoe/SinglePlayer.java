@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class SinglePlayer extends AppCompatActivity implements View.OnClickListener{
 
@@ -56,7 +57,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                String buttonID = "button1_ + i + j;
+                String buttonID = "button1_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
                 buttons[i][j].setOnClickListener(this);
@@ -89,6 +90,11 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
             ((Button) v).setText("X");
             roundCount++;
             WhoHasWon();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         if (!playerTurn) {

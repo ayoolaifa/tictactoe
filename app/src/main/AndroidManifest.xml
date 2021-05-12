@@ -14,10 +14,10 @@
             android:label="@string/title_activity_help_and_tutorial"
             android:theme="@style/Theme.TicTacToe.NoActionBar"></activity>
         <activity android:name=".SinglePlayer"
-            android:screenOrientation="portrait"
             />
         <activity android:name=".MainActivity" />
-        <activity android:name=".StartingPage">
+        <activity android:name=".StartingPage"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

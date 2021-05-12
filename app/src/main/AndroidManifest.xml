@@ -13,9 +13,7 @@
             android:name=".HelpAndTutorial"
             android:label="@string/title_activity_help_and_tutorial"
             android:theme="@style/Theme.TicTacToe.NoActionBar"></activity>
-        <activity android:name=".Test" />
         <activity android:name=".SinglePlayer" />
-        <activity android:name=".MultiPlayerPage" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StartingPage">
             <intent-filter>

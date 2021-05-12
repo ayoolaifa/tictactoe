@@ -74,14 +74,6 @@
         </Button>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:layout_editor_absoluteX="148dp">
-
-    </RelativeLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

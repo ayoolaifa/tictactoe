@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.MovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,38 +40,39 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_player);
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_single_player);
 
-        //When I Start to let user choose thier Difficulty//
-        /*Spinner MySpinner = (Spinner) findViewById(R.id.spinner);
+    //When I Start to let user choose thier Difficulty//
+    /*Spinner MySpinner = (Spinner) findViewById(R.id.spinner);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(SinglePlayer.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.DropDown));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        MySpinner.setAdapter((myAdapter));*/
+    ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(SinglePlayer.this,
+            android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.DropDown));
+    myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    MySpinner.setAdapter((myAdapter));*/
 
-        backButton();
+    backButton();
 
-        textViewPlayer = findViewById(R.id.text_view_player);
-        textViewComputer = findViewById(R.id.text_view_computer);
+    textViewPlayer = findViewById(R.id.text_view_player);
+    textViewComputer = findViewById(R.id.text_view_computer);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                String buttonID = "button1_" + i + j;
-                int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
-                buttons[i][j] = findViewById(resID);
-                buttons[i][j].setOnClickListener(this);
-            }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            String buttonID = "button1_" + i + j;
+            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+            buttons[i][j] = findViewById(resID);
+            buttons[i][j].setOnClickListener(this);
         }
+    }
 
-        //Reset game button//
-        Button buttonReset = findViewById(R.id.button_reset2);
-        buttonReset.setOnClickListener(v -> resetGame());
+    //Reset game button//
+    Button buttonReset = findViewById(R.id.button_reset2);
+    buttonReset.setOnClickListener(v -> resetGame());
 
     }
 
     //This function allows the player to set which position they want to play at//
+
     @Override
     public void onClick(View v) {
         String[][] field = new String[3][3];
@@ -87,11 +89,18 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
                 }
 
             }
+
             ((Button) v).setText("X");
             roundCount++;
             WhoHasWon();
         }
 
+
+        try {
+            Thread.sleep(750);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
 
         if (!playerTurn) {
             for (int i = 0; i < 3; i++){
@@ -105,16 +114,14 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
             array = RowAndColumn.split(",");
             int Row = Integer.valueOf(array[0]);
             int Column = Integer.valueOf(array[1]);
+
             buttons[Row][Column].setText(Computer);
             roundCount++;
-
             WhoHasWon();
+
         }
-
-
-
-
     }
+
 
     private String BestMove(String[][] field){
         int BestValue = -1000;

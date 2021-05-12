@@ -3,22 +3,15 @@ package com.example.tictactoe;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.method.MovementMethod;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class SinglePlayer extends AppCompatActivity implements View.OnClickListener{
 
@@ -85,7 +78,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
             for (int i = 0; i < 3; i++){
                 for (int j = 0; j < 3; j++){
-                    field[i][j] = (String) buttons[i][j].getText().toString();
+                    field[i][j] = buttons[i][j].getText().toString();
                 }
 
             }
@@ -95,38 +88,16 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
             WhoHasWon();
         }
 
-
-        try {
-            Thread.sleep(750);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        if (!playerTurn) {
-            for (int i = 0; i < 3; i++){
-                for (int j = 0; j < 3; j++){
-                    field[i][j] = (String) buttons[i][j].getText().toString();
-                }
-
-            }
-            String[] array = new String[2];
-            String RowAndColumn = BestMove(field);
-            array = RowAndColumn.split(",");
-            int Row = Integer.valueOf(array[0]);
-            int Column = Integer.valueOf(array[1]);
-
-            buttons[Row][Column].setText(Computer);
-            roundCount++;
-            WhoHasWon();
+        if(!playerTurn){
+            ComputerTurn(field);
 
         }
     }
 
-
     private String BestMove(String[][] field){
         int BestValue = -1000;
-        int BestRowMove = 0;
-        int BestColumnMove = 0;
+        int BestRowMove;
+        int BestColumnMove;
         String Move = "";
 
         for (int i = 0; i < 3; i++){
@@ -142,7 +113,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
                     if (MoveValue > BestValue){
                         BestRowMove = i;
                         BestColumnMove = j;
-                        Move = String.valueOf(BestRowMove) + "," + String.valueOf(BestColumnMove);
+                        Move = BestRowMove + "," + BestColumnMove;
                         BestValue = MoveValue;
                     }
                 }
@@ -201,7 +172,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
     }
 
     private void backButton(){
-        Button BackButton = (Button) findViewById(R.id.button_back);
+        Button BackButton = findViewById(R.id.button_back);
         BackButton.setOnClickListener(v -> startActivity(new Intent(SinglePlayer.this, StartingPage.class)));
     }
 
@@ -210,7 +181,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < 3; i++){
             for (int j = 0; j< 3; j++){
-                field[i][j] = (String) buttons[i][j].getText().toString();
+                field[i][j] = buttons[i][j].getText().toString();
             }
         }
 
@@ -364,6 +335,24 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
             playerTurn = !playerTurn;
         }
 
+    }
+
+    private void ComputerTurn(String[][] field) {
+
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                field[i][j] = buttons[i][j].getText().toString();
+            }
+
+        }
+        String[] array;
+        String RowAndColumn = BestMove(field);
+        array = RowAndColumn.split(",");
+        int Row = Integer.parseInt(array[0]);
+        int Column = Integer.parseInt(array[1]);
+        buttons[Row][Column].setText(Computer);
+        roundCount++;
+        WhoHasWon();
     }
 
     @Override

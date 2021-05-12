@@ -12,10 +12,18 @@
         <activity
             android:name=".HelpAndTutorial"
             android:label="@string/title_activity_help_and_tutorial"
-            android:theme="@style/Theme.TicTacToe.NoActionBar"></activity>
+            android:theme="@style/Theme.TicTacToe.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".SinglePlayer"
-            />
-        <activity android:name=".MainActivity" />
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".StartingPage"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:textSize="60sp"
             android:textStyle="italic"
-            android:textColor="@color/purple_500"/>
+            android:textColor="@color/white"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -35,7 +35,8 @@
             android:id="@+id/tv_tutorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/gray"/>
     </RelativeLayout>
 
 

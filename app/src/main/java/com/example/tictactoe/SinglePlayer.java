@@ -64,8 +64,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    //This function allows the player to set which position they want to play at//
-
     @Override
     public void onClick(View v) {
         String[][] field = new String[3][3];

@@ -17,6 +17,7 @@ public class StartingPage extends AppCompatActivity {
 
         SinglePlayer();
         MultiPlayer();
+        Tutorial();
 
         ImageView myImageView = (ImageView) findViewById(R.id.imageView);
         myImageView.setImageResource(R.drawable.tictactoetitle);
@@ -42,6 +43,16 @@ public class StartingPage extends AppCompatActivity {
             }
         });
     }
+    private void Tutorial(){
+        Button Tutorial = (Button) findViewById(R.id.Tutorial);
+        Tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(StartingPage.this, HelpAndTutorial.class));
+            }
+        });
+    }
+
 
 
 }

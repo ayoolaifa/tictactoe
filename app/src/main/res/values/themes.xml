@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.TicTacToe" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#0230AC</item>
+        <item name="colorPrimary">#A30101</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

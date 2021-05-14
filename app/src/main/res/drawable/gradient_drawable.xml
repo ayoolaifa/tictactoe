@@ -4,8 +4,8 @@
     xmlns:android = "http://schemas.android.com/apk/res/android" >
 
     <gradient
-        android:startColor = "#000000"
-        android:endColor = "#0138C3"
+        android:startColor = "#232323"
+        android:endColor = "#C30118"
         android:angle = "90"
         android:type = "linear"/>
 </shape>

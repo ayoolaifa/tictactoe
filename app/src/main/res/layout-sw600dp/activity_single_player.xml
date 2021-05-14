@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:freezesText="true"
             android:text="Player: 0"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/text_view_computer"
@@ -27,7 +28,8 @@
             android:layout_below="@id/text_view_player"
             android:freezesText="true"
             android:text="Computer: 0"
-            android:textSize="50sp" />
+            android:textSize="50sp"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/button_reset2"
@@ -41,7 +43,8 @@
             android:layout_marginEnd="331dp"
             android:layout_marginRight="331dp"
             android:text="reset"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:background="@drawable/rounded_button"/>
 
         <Button
             android:id="@+id/button_back"
@@ -55,7 +58,8 @@
             android:layout_marginEnd="77dp"
             android:layout_marginRight="77dp"
             android:text="Back"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:background="@drawable/rounded_button"/>
 
     </RelativeLayout>
     <LinearLayout
@@ -69,7 +73,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/button1_01"
@@ -77,7 +82,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/button1_02"
@@ -85,7 +91,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
     </LinearLayout>
     <LinearLayout
@@ -99,7 +106,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/button1_11"
@@ -107,14 +115,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
         <Button
             android:id="@+id/button1_12"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
     </LinearLayout>
     <LinearLayout
@@ -128,7 +138,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/button1_21"
@@ -136,14 +147,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
         <Button
             android:id="@+id/button1_22"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="55sp"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:backgroundTint="@color/black"/>
 
     </LinearLayout>
 

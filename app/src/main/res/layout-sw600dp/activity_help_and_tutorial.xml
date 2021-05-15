@@ -37,21 +37,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/ButtonsTutotial"
-        android:layout_width="389dp"
-        android:layout_height="171dp"
+        android:layout_width="624dp"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/SinglePlayer_2"
-            android:layout_width="240dp"
-            android:layout_height="74dp"
+            android:id="@+id/SinglePlayer"
+            android:layout_width="358dp"
+            android:layout_height="105dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="72dp"
             android:layout_marginLeft="72dp"
@@ -62,14 +65,14 @@
             android:textSize="24dp" />
 
         <Button
-            android:id="@+id/MultiPlayer_2"
-            android:layout_width="240dp"
-            android:layout_height="74dp"
-            android:layout_below="@+id/SinglePlayer_2"
+            android:id="@+id/MultiPlayer"
+            android:layout_width="358dp"
+            android:layout_height="105dp"
+            android:layout_below="@+id/SinglePlayer"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="72dp"
             android:layout_marginLeft="72dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
             android:background="@drawable/rounded_button"

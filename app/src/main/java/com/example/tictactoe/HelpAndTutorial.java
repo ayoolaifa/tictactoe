@@ -2,8 +2,11 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HelpAndTutorial extends AppCompatActivity {
@@ -12,6 +15,9 @@ public class HelpAndTutorial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_and_tutorial);
+
+        SinglePlayer();
+        MultiPlayer();
 
         String htmlString =
                 "<b><li>The game is played on a grid that's 3 squares by 3 squares.</li></b>\n" +
@@ -27,5 +33,27 @@ public class HelpAndTutorial extends AppCompatActivity {
         TextView TextTutorialTitle = findViewById(R.id.TitleTutorialText);
         String TutorialTitle = "<u>How To Play</u>";
         TextTutorialTitle.setText(Html.fromHtml(TutorialTitle));
+
+
+    }
+
+    private void SinglePlayer(){
+        Button SinglePlayerButton = findViewById(R.id.SinglePlayer_2);
+        SinglePlayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HelpAndTutorial.this, SinglePlayer.class));
+            }
+        });
+    }
+
+    private void MultiPlayer(){
+        Button MultiPlayerButton = findViewById(R.id.MultiPlayer_2);
+        MultiPlayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HelpAndTutorial.this, MainActivity.class));
+            }
+        });
     }
 }

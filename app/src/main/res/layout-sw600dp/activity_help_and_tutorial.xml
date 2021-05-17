@@ -61,8 +61,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginRight="73dp"
             android:background="@drawable/rounded_button"
-            android:text="Single Player"
-            android:textSize="24dp" />
+            android:text="@string/single_player"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/MultiPlayer"
@@ -76,8 +76,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
             android:background="@drawable/rounded_button"
-            android:text="MultiPlayer"
-            android:textSize="24dp" />
+            android:text="@string/multiplayer"
+            android:textSize="24sp" />
     </RelativeLayout>
 
 

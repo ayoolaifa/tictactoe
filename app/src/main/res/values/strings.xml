@@ -14,4 +14,14 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="single_player">Single Player</string>
+    <string name="multiplayer">MultiPlayer</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="powered_by_aog">Powered By AOG</string>
+    <string name="todo">TODO</string>
+    <string name="player_0">Player: 0</string>
+    <string name="computer_0">Computer: 0</string>
+    <string name="reset">reset</string>
+    <string name="back">Back</string>
+    <string name="player_2_0">Player 2: 0</string>
 </resources>

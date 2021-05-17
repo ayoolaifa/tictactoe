@@ -23,7 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/todo" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -33,7 +34,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
         app:layout_constraintVertical_bias="0.33"
-        tools:layout_editor_absoluteX="4dp">
+        tools:layout_editor_absoluteX="4dp"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/SinglePlayer"
@@ -45,8 +47,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginRight="73dp"
             android:background="@drawable/rounded_button"
-            android:text="Single Player"
-            android:textSize="24dp" />
+            android:text="@string/single_player"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/MultiPlayer"
@@ -60,8 +62,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginRight="72dp"
             android:background="@drawable/rounded_button"
-            android:text="MultiPlayer"
-            android:textSize="24dp" />
+            android:text="@string/multiplayer"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/Tutorial"
@@ -75,8 +77,8 @@
             android:layout_marginEnd="72dp"
             android:layout_marginRight="74dp"
             android:background="@drawable/rounded_button"
-            android:text="Tutorial"
-            android:textSize="24dp">
+            android:text="@string/tutorial"
+            android:textSize="24sp">
 
         </Button>
     </RelativeLayout>
@@ -84,9 +86,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powered By AOG"
+        android:text="@string/powered_by_aog"
         android:textColor="@color/yellow"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

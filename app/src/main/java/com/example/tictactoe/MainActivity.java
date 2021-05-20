@@ -1,15 +1,14 @@
 package com.example.tictactoe;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button[][] buttons = new Button[3][3];
@@ -65,9 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (checkForWin()) {
             if (player1Turn) {
-                player1wins();
+                Xwins();
             } else {
-                player2wins();
+                Owins();
             }
         } else if (roundCount ==9) {
             draw();
@@ -119,19 +118,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return false;
     }
 
-    private void player1wins(){
+    private void Xwins(){
         player1points++;
         Toast.makeText(this, "Player 1 Wins", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
-    private void player2wins(){
+    private void Owins(){
         player2points++;
         Toast.makeText(this, "Player 2 Wins", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
-    private void draw(){
+    public void draw(){
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         resetBoard();
     }

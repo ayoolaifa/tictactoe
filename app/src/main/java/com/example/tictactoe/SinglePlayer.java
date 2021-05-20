@@ -9,11 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class SinglePlayer extends AppCompatActivity implements View.OnClickListener{
+public class SinglePlayer extends MainActivity implements View.OnClickListener{
 
     private final Button[][] buttons = new Button[3][3];
 
@@ -285,11 +284,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnClickListe
         computerpoints++;
         Toast.makeText(this, "Computer Wins", Toast.LENGTH_SHORT).show();
         updatePointsText();
-        resetBoard();
-    }
-
-    private void draw(){
-        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         resetBoard();
     }
 

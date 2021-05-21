@@ -20,12 +20,12 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
 
     private final String Computer = "O";
 
-    public boolean playerTurn = true;
+    private boolean XTurn = true;
 
     private int roundCount;
 
-    private int playerpoints;
-    private int computerpoints;
+    private int Xpoints;
+    private int Opoints;
 
     private TextView textViewPlayer;
     private TextView textViewComputer;
@@ -71,7 +71,7 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
             return;
         }
 
-        if (playerTurn) {
+        if (XTurn) {
 
             for (int i = 0; i < 3; i++){
                 for (int j = 0; j < 3; j++){
@@ -85,7 +85,7 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
             WhoHasWon();
         }
 
-        if(!playerTurn){
+        if(!XTurn){
             ComputerTurn(field);
 
         }
@@ -274,14 +274,14 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
     }
 
     private void playerwins(){
-        playerpoints++;
+        Xpoints++;
         Toast.makeText(this, "Player  Wins", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
 
     private void computerwins(){
-        computerpoints++;
+        Opoints++;
         Toast.makeText(this, "Computer Wins", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
@@ -289,8 +289,8 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
 
     @SuppressLint("SetTextI18n")
     private void updatePointsText(){
-        textViewPlayer.setText("Player: " + playerpoints);
-        textViewComputer.setText("Computer: " + computerpoints);
+        textViewPlayer.setText("Player: " + Xpoints);
+        textViewComputer.setText("Computer: " + Opoints);
     }
 
     private void resetBoard(){
@@ -301,19 +301,19 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
         }
 
         roundCount = 0;
-        playerTurn = true;
+        XTurn = true;
     }
 
     private void resetGame(){
-        playerpoints = 0;
-        computerpoints = 0;
+        Xpoints = 0;
+        Opoints = 0;
         updatePointsText();
         resetBoard();
     }
 
     private void WhoHasWon(){
         if (checkForWin()) {
-            if (playerTurn) {
+            if (XTurn) {
                 playerwins();
             }
             else {
@@ -324,7 +324,7 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
             draw();
         }
         else {
-            playerTurn = !playerTurn;
+            XTurn = !XTurn;
         }
 
     }
@@ -352,9 +352,9 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
         super.onSaveInstanceState(outState);
 
         outState.putInt("roundCount", roundCount);
-        outState.putInt("playerpoints", playerpoints);
-        outState.putInt("computerpoints", computerpoints);
-        outState.putBoolean("playerTurn", playerTurn);
+        outState.putInt("playerpoints", Xpoints);
+        outState.putInt("computerpoints", Opoints);
+        outState.putBoolean("XTurn", XTurn);
     }
 
     @Override
@@ -362,9 +362,9 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
         super.onRestoreInstanceState(savedInstanceState);
 
         roundCount = savedInstanceState.getInt("roundCount");
-        playerpoints = savedInstanceState.getInt("playerpoints");
-        computerpoints = savedInstanceState.getInt("computerpoints");
-        playerTurn = savedInstanceState.getBoolean("playerTurn");
+        Xpoints = savedInstanceState.getInt("playerpoints");
+        Opoints = savedInstanceState.getInt("computerpoints");
+        XTurn = savedInstanceState.getBoolean("XTurn");
     }
 
 }

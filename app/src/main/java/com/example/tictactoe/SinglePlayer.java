@@ -287,6 +287,11 @@ public class SinglePlayer extends MainActivity implements View.OnClickListener{
         resetBoard();
     }
 
+    private void draw(){
+        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        resetBoard();
+    }
+
     @SuppressLint("SetTextI18n")
     private void updatePointsText(){
         textViewPlayer.setText("Player: " + Xpoints);
